@@ -7477,6 +7477,7 @@ class ESLint {
 		const commandPrefix = prefix || getNpmBinCommand(dir);
 		const { stdout: version } = run(`${commandPrefix} eslint -v`, { dir });
 		const isV9 = version.startsWith("v9.");
+		console.log(extensions)
 		const extensionsArg =
 			extensions.length > 0 ? `--ext ${extensions.map((ext) => `.${ext}`).join(",")}` : "";
 		const fixArg = fix ? "--fix" : "";
