@@ -7496,6 +7496,7 @@ class ESLint {
 		]
 			.filter((s) => s.length > 0)
 			.join(" ");
+		console.log(command)
 
 		return run(command, {
 			dir,
