@@ -7478,10 +7478,8 @@ class ESLint {
 		const { stdout: version } = run(`${commandPrefix} eslint -v`, { dir });
 		const isV9 = version.startsWith("v9.");
 		const extensionsArg =
-			extensions.length > 0 ? `--ext ${extensions.map((ext) => `.${ext}`).join(",")}` : "";
+			extensions.length > 0 && extensions[0] !== "" ? `--ext ${extensions.map((ext) => `.${ext}`).join(",")}` : "";
 		
-		console.log(extensions)
-		console.log(extensionsArg)
 		const fixArg = fix ? "--fix" : "";
 
 		const command = [
